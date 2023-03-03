@@ -15,7 +15,7 @@ $businessHoursStartDateTime = [DateTime]::ParseExact($businessHoursStart, "HH:mm
 $businessHoursEndDateTime = [DateTime]::ParseExact($businessHoursEnd, "HH:mm:ss", $null)
 
 if ($dayOfWeek -ge "Monday" -and $dayOfWeek -le "Friday" -and $now.TimeOfDay -ge $businessHoursStartDateTime.TimeOfDay -and $now.TimeOfDay -le $businessHoursEndDateTime.TimeOfDay) {
-    $isOutOfBusinessHours= "false"
+    $isOutOfBusinessHours= $false
 } else {
-    $isOutOfBusinessHours= "true"
+    $isOutOfBusinessHours= $true
 }
